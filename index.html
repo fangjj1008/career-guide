@@ -49,30 +49,30 @@
   header{
     background:var(--deep);color:#fff;overflow:hidden;position:relative;
   }
-  header .wrap{position:relative;padding-top:64px;padding-bottom:72px;}
-  .hero-bg{position:absolute;inset:0;opacity:.5;pointer-events:none;}
+  header .wrap{position:relative;padding-top:38px;padding-bottom:40px;}
+  .hero-bg{position:absolute;inset:0;opacity:.45;pointer-events:none;}
   .hero-tag{
     display:inline-flex;align-items:center;gap:6px;
-    font-size:13px;color:var(--amber-soft);
+    font-size:12.5px;color:var(--amber-soft);
     border:1px solid rgba(232,165,75,.4);border-radius:999px;
-    padding:4px 12px;margin-bottom:20px;
+    padding:3px 12px;margin-bottom:14px;
   }
   .hero-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber-soft);}
   h1{
-    font-size:34px;line-height:1.35;font-weight:800;letter-spacing:.5px;max-width:16em;
+    font-size:26px;line-height:1.4;font-weight:800;letter-spacing:.5px;max-width:18em;
   }
   h1 .hl{color:var(--amber-soft);}
-  .hero-sub{margin-top:18px;font-size:15px;color:rgba(255,255,255,.78);max-width:38em;}
-  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .hero-sub{margin-top:12px;font-size:14px;color:rgba(255,255,255,.78);max-width:40em;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
   .hero-meta span{
-    font-size:13px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.16);border-radius:8px;padding:7px 13px;
+    font-size:12.5px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.16);border-radius:8px;padding:5px 12px;
   }
   .hero-meta b{color:var(--amber-soft);font-weight:700;}
 
   @media (max-width:640px){
-    h1{font-size:26px;}
-    header .wrap{padding-top:44px;padding-bottom:52px;}
+    h1{font-size:22px;}
+    header .wrap{padding-top:26px;padding-bottom:28px;}
   }
 
   /* ===== 区块通用 ===== */
@@ -87,8 +87,9 @@
   @media (max-width:640px){ section{padding:44px 0 4px;} h2{font-size:22px;} }
 
   /* ===== 岗位卡片 ===== */
-  .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;}
-  @media (max-width:900px){ .role-grid{grid-template-columns:1fr;} }
+  .role-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:start;}
+  @media (max-width:1080px){ .role-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:680px){ .role-grid{grid-template-columns:1fr;} }
   .role-card{
     background:var(--card);border:1px solid var(--line);border-radius:14px;
     padding:22px 20px;display:flex;flex-direction:column;
@@ -101,6 +102,7 @@
   .r-ico.dev{background:var(--deep);}
   .r-ico.pm{background:var(--amber);}
   .r-ico.ops{background:var(--green);}
+  .r-ico.qa{background:#3E6B8C;}
   .role-card h3{font-size:19px;font-weight:800;color:var(--deep);}
   .r-note{font-size:13px;color:var(--ink-2);margin:8px 0 14px;border-left:3px solid var(--line);padding-left:10px;}
   .path-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
@@ -217,6 +219,148 @@
       transition:none !important;transform:none !important;
     }
   }
+
+  /* ===== 省份板块 ===== */
+  .prov-panel{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:22px 20px;
+  }
+  .prov-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px;}
+  .prov-label{font-size:14px;font-weight:700;color:var(--deep);}
+  .prov-select{
+    font-size:15px;color:var(--ink);background:#FCFBF8;
+    border:1px solid var(--line);border-radius:10px;padding:10px 14px;
+    min-width:220px;outline:none;cursor:pointer;
+  }
+  .prov-select:focus{border-color:var(--amber);}
+  .prov-note{font-size:12.5px;color:var(--ink-2);}
+  .prov-result{margin-top:4px;}
+  .prov-placeholder{
+    text-align:center;color:var(--ink-2);font-size:14px;
+    border:1px dashed var(--line);border-radius:10px;padding:34px 16px;
+  }
+  .prov-block{margin-bottom:18px;}
+  .prov-block:last-child{margin-bottom:0;}
+  .prov-block h4{
+    font-size:15px;font-weight:800;color:var(--deep);
+    display:flex;align-items:center;gap:8px;margin-bottom:10px;
+  }
+  .prov-block h4 .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);flex:0 0 auto;}
+  .prov-block h4 .dot.g{background:var(--green);}
+  .prov-block h4 .dot.b{background:var(--deep);}
+  .prov-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .prov-chip{
+    background:#FCFBF8;border:1px solid var(--line);border-radius:999px;
+    padding:6px 13px;font-size:13px;color:var(--ink);
+  }
+  .prov-chip b{color:var(--deep);}
+  .prov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:900px){ .prov-grid{grid-template-columns:1fr;} }
+  .prov-col{
+    border:1px solid var(--line);border-radius:10px;background:#FCFBF8;
+    padding:13px 14px;
+  }
+  .prov-col .pc-title{font-size:14px;font-weight:800;color:var(--deep);margin-bottom:10px;}
+  .prov-firms{display:flex;flex-direction:column;gap:8px;}
+  .prov-firm{border:1px solid var(--line);background:#fff;border-radius:8px;padding:9px 11px;}
+  .prov-firm .f-name{font-size:13.5px;font-weight:700;color:var(--ink);}
+  .prov-firm .f-note{font-size:12px;color:var(--ink-2);margin-top:2px;}
+  .prov-firm.local{border-left:3px solid var(--amber);}
+
+  /* ===== 选择向导 ===== */
+  .quiz-panel{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:26px 24px 30px;position:relative;
+  }
+  .quiz-stepbar{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
+  .qs{
+    font-size:13px;color:var(--ink-2);background:#F0EDE6;
+    border:1px solid var(--line);border-radius:999px;padding:5px 14px;cursor:pointer;
+    transition:background .2s ease,color .2s ease,border-color .2s ease;
+  }
+  .qs.done{color:var(--green);border-color:rgba(46,125,107,.5);background:rgba(46,125,107,.06);}
+  .qs.cur{color:#fff;background:var(--amber);border-color:var(--amber);font-weight:700;}
+  .quiz-view{display:none;}
+  .quiz-view.active{display:block;animation:qvIn .35s ease;}
+  @keyframes qvIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .qv-title{font-size:20px;font-weight:800;color:var(--deep);margin-bottom:6px;}
+  .qv-sub{font-size:13.5px;color:var(--ink-2);margin-bottom:18px;}
+  .quiz-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  @media (max-width:900px){ .quiz-opts{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:520px){ .quiz-opts{grid-template-columns:1fr;} }
+  .qopt{
+    text-align:left;background:#FCFBF8;border:1.5px solid var(--line);border-radius:12px;
+    padding:16px 15px;cursor:pointer;transition:all .2s ease;
+    font-family:inherit;
+  }
+  .qopt:hover{border-color:var(--amber);transform:translateY(-2px);}
+  .qopt.sel{border-color:var(--amber);background:rgba(201,123,45,.06);box-shadow:0 0 0 1px var(--amber);}
+  .qopt .q-ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;background:var(--deep);margin-bottom:10px;}
+  .qopt .q-name{font-size:16px;font-weight:800;color:var(--deep);}
+  .qopt .q-d{font-size:12.5px;color:var(--ink-2);margin-top:4px;line-height:1.55;}
+  .qopt .q-tag{display:inline-block;font-size:11.5px;color:var(--amber);margin-top:8px;font-weight:700;}
+  .quiz-actions{display:flex;align-items:center;gap:14px;margin-top:22px;flex-wrap:wrap;}
+  .qbtn{
+    border:none;border-radius:10px;padding:12px 22px;font-size:15px;font-weight:700;cursor:pointer;
+    background:var(--deep);color:#fff;transition:transform .2s ease,background .2s ease;
+    font-family:inherit;
+  }
+  .qbtn:hover{background:var(--deep-2);}
+  .qbtn:active{transform:scale(.97);}
+  .qbtn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);}
+  .qbtn:disabled{opacity:.5;cursor:not-allowed;}
+  .quiz-hint{font-size:12.5px;color:var(--ink-2);}
+
+  /* ===== loading ===== */
+  .loading-mask{
+    position:fixed;inset:0;z-index:100;background:rgba(22,51,59,.82);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+    opacity:0;pointer-events:none;transition:opacity .25s ease;
+  }
+  .loading-mask.show{opacity:1;pointer-events:auto;}
+  .spinner{
+    width:52px;height:52px;border-radius:50%;
+    border:4px solid rgba(255,255,255,.2);border-top-color:var(--amber-soft);
+    animation:spin .8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .loading-mask .lm-text{color:rgba(255,255,255,.92);font-size:16px;font-weight:600;}
+
+  /* ===== 结论区 ===== */
+  .res-panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 22px;}
+  .res-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .res-tag{
+    background:var(--deep);color:#fff;border-radius:999px;padding:6px 15px;font-size:13.5px;font-weight:700;
+  }
+  .res-tag.hl{background:var(--amber);}
+  .res-block{margin-bottom:20px;}
+  .res-block:last-child{margin-bottom:0;}
+  .res-block h4{
+    font-size:15.5px;font-weight:800;color:var(--deep);
+    display:flex;align-items:center;gap:8px;margin-bottom:10px;
+  }
+  .res-block h4 .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);flex:0 0 auto;}
+  .res-block h4 .dot.g{background:var(--green);}
+  .res-strategy{
+    background:#FCFBF8;border:1px solid var(--line);border-left:4px solid var(--amber);
+    border-radius:10px;padding:14px 16px;font-size:14.5px;color:var(--ink);
+  }
+  .res-strategy b{color:var(--deep);}
+  .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  @media (max-width:900px){ .res-grid{grid-template-columns:1fr;} }
+  .res-firm{background:#FCFBF8;border:1px solid var(--line);border-radius:9px;padding:10px 12px;}
+  .res-firm.local{border-left:3px solid var(--amber);}
+  .res-firm .f-name{font-size:14px;font-weight:700;color:var(--ink);}
+  .res-firm .f-note{font-size:12px;color:var(--ink-2);margin-top:2px;}
+  .res-chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .res-chip{background:#FCFBF8;border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:13px;color:var(--ink);}
+  .res-action{
+    background:var(--deep);color:#fff;border-radius:10px;padding:14px 16px;font-size:14.5px;
+  }
+  .res-action b{color:var(--amber-soft);}
+  .res-more{margin-top:18px;font-size:13px;color:var(--ink-2);}
+  .res-more a{color:var(--amber);font-weight:700;text-decoration:none;}
+  .res-more a:hover{text-decoration:underline;}
 </style>
 </head>
 <body>
@@ -231,6 +375,7 @@
       <a href="#roles">岗位去向</a>
       <a href="#ages">年龄段</a>
       <a href="#matrix">速查矩阵</a>
+      <a href="#province">按省份</a>
       <a href="#advice">通用建议</a>
     </div>
   </div>
@@ -255,14 +400,109 @@
   <div class="wrap">
     <div class="hero-tag">职业路径规划 · 经验性建议</div>
     <h1>运营商合作伙伴公司的从业者，<br><span class="hl">失业后往哪走？</span></h1>
-    <p class="hero-sub">不是只聊开发。这份指南覆盖同一家公司里的开发、产品、运维三类岗位，并按 25–30、30–35、35–40 三个年龄段给出各自的路径与优先级——先想清楚"你现在站在哪、下一站能去哪"。</p>
+    <p class="hero-sub">先选身份、年龄与省份，一键生成你的专属去向方案；页面下方还有覆盖开发、产品、运维、测试四类岗位 × 25–40 岁三个年龄段的完整指南，以及各省推荐企业清单。</p>
     <div class="hero-meta">
-      <span>岗位 <b>3</b> 类：开发 / 产品 / 运维</span>
+      <span>岗位 <b>4</b> 类：开发 / 产品 / 运维 / 测试</span>
       <span>年龄段 <b>3</b> 段：25–40 岁</span>
       <span>匹配度与成功率仅为经验判断，非精确数据</span>
     </div>
   </div>
 </header>
+
+<!-- ===== 视图：选择向导 ===== -->
+<section id="quiz" style="padding-top:0;">
+  <div class="wrap">
+    <div class="quiz-panel">
+      <div class="quiz-stepbar">
+        <span class="qs cur" data-step="0">1 · 选择身份</span>
+        <span class="qs" data-step="1">2 · 选择年龄</span>
+        <span class="qs" data-step="2">3 · 选择省份</span>
+      </div>
+
+      <div class="quiz-view active" id="qv0">
+        <div class="qv-title">你是什么岗位？</div>
+        <div class="qv-sub">选一个，结论会按岗位推荐不同去向</div>
+        <div class="quiz-opts" id="qoRole">
+          <button class="qopt" type="button" data-val="开发">
+            <div class="q-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13 4l-2 16"/></svg>
+            </div>
+            <div class="q-name">开发</div>
+            <div class="q-d">Java / 前端 / 数据库与接口对接，围绕运营商系统</div>
+            <span class="q-tag">技术型</span>
+          </button>
+          <button class="qopt" type="button" data-val="产品">
+            <div class="q-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18M5 5l14 14M19 5 5 19"/></svg>
+            </div>
+            <div class="q-name">产品</div>
+            <div class="q-d">业务型 / B 端产品经理，懂 BSS/OSS、CRM、计费与政企业务</div>
+            <span class="q-tag">业务型</span>
+          </button>
+          <button class="qopt" type="button" data-val="运维">
+            <div class="q-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
+            </div>
+            <div class="q-name">运维</div>
+            <div class="q-d">部署、监控、故障处理、割接与值班，常驻客户现场</div>
+            <span class="q-tag">稳定型</span>
+          </button>
+          <button class="qopt" type="button" data-val="测试">
+            <div class="q-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div class="q-name">测试</div>
+            <div class="q-d">功能 / 接口 / 系统测试，UAT 支撑与质量流程</div>
+            <span class="q-tag">质量型</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="quiz-view" id="qv1">
+        <div class="qv-title">你的年龄区间？</div>
+        <div class="qv-sub">同样一份工作，不同年龄段的打法完全不同</div>
+        <div class="quiz-opts" id="qoAge">
+          <button class="qopt" type="button" data-val="25-30">
+            <div class="q-name">25–30 岁</div>
+            <div class="q-d">爬坡期：学习快、试错成本低，优先选成长性</div>
+            <span class="q-tag">攒弹药</span>
+          </button>
+          <button class="qopt" type="button" data-val="30-35">
+            <div class="q-name">30–35 岁</div>
+            <div class="q-d">黄金转型期：技能 + 业务 + 资源的组合价值最高</div>
+            <span class="q-tag">主动转型</span>
+          </button>
+          <button class="qopt" type="button" data-val="35-40">
+            <div class="q-name">35–40 岁</div>
+            <div class="q-d">定位期：求稳 + 复合价值，甲方化 / 专家化</div>
+            <span class="q-tag">定出口</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="quiz-view" id="qv2">
+        <div class="qv-title">你在哪个省发展？</div>
+        <div class="qv-sub">结论会带上该省的运营商体系与本地企业</div>
+        <div class="quiz-actions">
+          <select id="qProv" class="prov-select"></select>
+          <button class="qbtn" id="qGen" type="button">生成我的去向</button>
+          <span class="quiz-hint">默认安徽，可随时切换</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 视图：专属结论 ===== -->
+<section id="result" hidden>
+  <div class="wrap">
+    <div class="res-panel">
+      <div class="res-tags" id="resTags"></div>
+      <div id="resBody"></div>
+      <p class="res-more">想看全部内容？往下是完整指南：<a href="#roles">岗位去向</a> · <a href="#ages">年龄段</a> · <a href="#matrix">速查矩阵</a> · <a href="#province">按省份</a> · <a href="#advice">通用建议</a></p>
+    </div>
+  </div>
+</section>
 
 <!-- ===== 视图：岗位去向 ===== -->
 <section id="roles">
@@ -408,6 +648,49 @@
         </ul>
       </article>
 
+      <!-- 测试 -->
+      <article class="role-card" data-aos>
+        <div class="r-head">
+          <div class="r-ico qa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3>测试</h3>
+        </div>
+        <p class="r-note">功能 / 接口 / 系统测试与 UAT 支撑，围绕质量流程与上线验收；价值在"流程经验 + 业务理解"，出路是把执行升级成工程与体系。</p>
+        <ul class="path-list">
+          <li>
+            <div class="p-name">同赛道平移 · 集成商 / 服务商测试、QA</div>
+            <div class="p-desc">中软国际、软通动力、博彦科技、文思海辉等测试交付团队</div>
+            <span class="p-tag">最快</span>
+          </li>
+          <li>
+            <div class="p-name">自动化测试 / 测试开发</div>
+            <div class="p-desc">补脚本、接口与 UI 自动化，从手工执行升级为工程能力</div>
+            <span class="p-tag t2">技能升级</span>
+          </li>
+          <li>
+            <div class="p-name">云厂商 · 测试 / 质量保障岗</div>
+            <div class="p-desc">华为、阿里云、腾讯云测试团队，收入与体系更好</div>
+            <span class="p-tag t2">收入上限更高</span>
+          </li>
+          <li>
+            <div class="p-name">金融 / 政企 · 行业 QA 与测试管理</div>
+            <div class="p-desc">懂业务的全链路测试稀缺，金融与政务尤其缺</div>
+            <span class="p-tag t2">经验加分</span>
+          </li>
+          <li>
+            <div class="p-name">转测试经理 / 质量管理</div>
+            <div class="p-desc">用 CMMI、质量体系与流程经验带团队、把体系</div>
+            <span class="p-tag t2">转型窗口</span>
+          </li>
+          <li>
+            <div class="p-name">转产品 / 项目管理</div>
+            <div class="p-desc">测试懂全链路、懂客户验收，转产品与项目管理有天然优势</div>
+            <span class="p-tag t3">跨界</span>
+          </li>
+        </ul>
+      </article>
+
     </div>
   </div>
 </section>
@@ -498,8 +781,35 @@
             <td><div class="cell-t">转交付管理 / 甲方运维</div><div class="cell-d">从值班到管理，摆脱可替代性</div></td>
             <td><div class="cell-t">甲方信息化 / 团队管理</div><div class="cell-d">用稳定与带人能力立身</div></td>
           </tr>
+          <tr>
+            <th>测试</th>
+            <td><div class="cell-t">学自动化测试 / 测试开发</div><div class="cell-d">补接口、性能与脚本能力；攒可展示的自动化项目</div></td>
+            <td><div class="cell-t">转测试管理 / 质量经理</div><div class="cell-d">从执行到管理，带质量体系与团队</div></td>
+            <td><div class="cell-t">质量管理 / 流程专家</div><div class="cell-d">或转甲方信息化，卖流程与体系经验</div></td>
+          </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 视图：按省份 ===== -->
+<section id="province">
+  <div class="wrap">
+    <div class="sec-head" data-aos>
+      <div class="sec-kicker">PART 04 · 按省份</div>
+      <h2>选个省份，看当地的推荐去向</h2>
+      <p class="sec-desc">选择省份后，展示该省运营商体系，以及开发、产品、运维三类岗位的推荐公司 / 机构。名单基于公开行业信息整理、非官方推荐，请以各公司官网与最新招聘信息为准。</p>
+    </div>
+    <div class="prov-panel" data-aos>
+      <div class="prov-head">
+        <label class="prov-label" for="provSelect">选择省份</label>
+        <select id="provSelect" class="prov-select"></select>
+        <span class="prov-note">默认选中安徽；港澳台暂不列入</span>
+      </div>
+      <div id="provResult" class="prov-result">
+        <div class="prov-placeholder">选择上方省份，查看当地推荐去向</div>
+      </div>
     </div>
   </div>
 </section>
@@ -508,7 +818,7 @@
 <section id="advice">
   <div class="wrap">
     <div class="sec-head" data-aos>
-      <div class="sec-kicker">PART 04 · 无论岗位与年龄</div>
+      <div class="sec-kicker">PART 05 · 无论岗位与年龄</div>
       <h2>三条通用建议</h2>
     </div>
     <div class="advice-grid">
@@ -537,6 +847,11 @@
     <a class="backtop" href="#roles">回到顶部 ↑</a>
   </div>
 </footer>
+
+<div class="loading-mask" id="loadingMask">
+  <div class="spinner"></div>
+  <div class="lm-text">正在为你生成去向方案…</div>
+</div>
 
 <script>
 (function () {
@@ -580,6 +895,279 @@
       });
     }
   } catch (err) { /* 动效失败不影响内容展示 */ }
+})();
+
+/* ===== 按省份推荐 ===== */
+(function () {
+  'use strict';
+  var PROVINCES = ['北京','天津','河北','山西','内蒙古','辽宁','吉林','黑龙江','上海','江苏','浙江','安徽','福建','江西','山东','河南','湖北','湖南','广东','广西','海南','重庆','四川','贵州','云南','陕西','甘肃','青海','宁夏','新疆','西藏'];
+
+  /* 全国通用去向（各省均可考虑，真实存在的全国性公司） */
+  var COMMON = {
+    dev: [
+      { n: '中软国际', d: '软件外包与项目交付龙头' },
+      { n: '软通动力', d: '运营商与政企数字化交付' },
+      { n: '亚信科技', d: '电信 BSS/OSS 软件龙头' },
+      { n: '华为生态伙伴', d: '政企交付 / 解决方案项目' },
+      { n: '宇信科技', d: '金融 + 运营商 IT' },
+      { n: '东软集团', d: '行业软件与解决方案' }
+    ],
+    pm: [
+      { n: '亚信科技', d: '电信业务软件产品线' },
+      { n: '华为行业解决方案', d: '政企产品与方案' },
+      { n: '中兴通讯', d: '政企产品与方案' },
+      { n: '宇信科技', d: '金融科技产品' },
+      { n: '长亮科技', d: '金融科技产品' },
+      { n: '恒生电子', d: '金融 IT 产品' }
+    ],
+    ops: [
+      { n: '润建股份', d: '通信网络运维服务' },
+      { n: '宜通世纪', d: '网络优化与维护' },
+      { n: '中富通', d: '通信代维服务' },
+      { n: '世纪鼎利', d: '网络优化测试' },
+      { n: '华星创业', d: '网络优化维护' },
+      { n: '中贝通信', d: '通信工程与维护' }
+    ]
+  };
+
+  /* 各省特色机构（有把握的本地企业 / 机构；未列出的省份以通用 + 运营商体系为主） */
+  var LOCAL = {
+    '北京': { dev: [{n:'太极股份',d:'北京 · 政务与信创集成'},{n:'中科软',d:'北京 · 行业软件'},{n:'东华软件',d:'北京 · 医疗/政务软件'}], pm: [{n:'亚信科技总部',d:'北京 · 电信软件产品'},{n:'中移动信息',d:'北京 · 中国移动专业IT公司'}], ops: [{n:'首都信息',d:'北京 · 政务系统运维'}] },
+    '天津': { dev: [{n:'中科曙光',d:'天津 · 计算与云计算'},{n:'卓朗科技',d:'天津 · 政企数字化'}], ops: [{n:'卓朗科技',d:'天津 · 数据中心与系统运维'}] },
+    '河北': { dev: [{n:'常山北明',d:'石家庄 · 华为生态伙伴'},{n:'中移集成',d:'雄安 · 中国移动系统集成'}], ops: [{n:'中移集成',d:'雄安 · 政企交付运维'}] },
+    '山西': { dev: [{n:'科达自控',d:'太原 · 工业互联网与自动化'}] },
+    '内蒙古': { ops: [{n:'中国移动呼和浩特数据中心',d:'呼和浩特 · 大型数据中心集群'},{n:'中国电信云计算内蒙古信息园',d:'呼和浩特 · 云与IDC运营'}] },
+    '辽宁': { dev: [{n:'东软集团',d:'沈阳 · 行业软件'},{n:'大连华信',d:'大连 · 对日与政企软件'}], pm: [{n:'东软集团',d:'沈阳 · 行业软件产品'}], ops: [{n:'东软集团',d:'沈阳 · 行业系统运维'}] },
+    '吉林': { dev: [{n:'吉大正元',d:'长春 · 信息安全'},{n:'启明信息',d:'长春 · 汽车与行业IT'}], ops: [{n:'启明信息',d:'长春 · 行业IT运维'}] },
+    '黑龙江': { dev: [{n:'工大软件',d:'哈尔滨 · 行业软件'}], ops: [{n:'工大软件',d:'哈尔滨 · 行业系统运维'}] },
+    '上海': { dev: [{n:'万达信息',d:'上海 · 政务/医疗软件'},{n:'诺基亚贝尔',d:'上海 · 通信设备与网络'}], pm: [{n:'万达信息',d:'上海 · 政务产品'},{n:'诺基亚贝尔',d:'上海 · 网络产品'}], ops: [{n:'天玑科技',d:'上海 · IT运维与数据中心服务'}] },
+    '江苏': { dev: [{n:'国电南瑞',d:'南京 · 电力信息化'},{n:'润和软件',d:'南京 · 软件外包与开源'},{n:'中兴南京研究所',d:'南京 · 通信研发与交付'}], ops: [{n:'国电南瑞',d:'南京 · 电力系统运维'}] },
+    '浙江': { dev: [{n:'恒生电子',d:'杭州 · 金融IT'},{n:'浙大网新',d:'杭州 · 行业软件'},{n:'信雅达',d:'杭州 · 金融科技'}], pm: [{n:'恒生电子',d:'杭州 · 金融产品'},{n:'浙大网新',d:'杭州 · 行业产品'}], ops: [{n:'银江技术',d:'杭州 · 智慧交通运维'},{n:'浙大网新',d:'杭州 · 系统运维'}] },
+    '安徽': { dev: [{n:'科大讯飞',d:'合肥 · AI与政企数字化'},{n:'四创电子',d:'合肥 · 中电科38所 · 电子与雷达'},{n:'皖通科技',d:'合肥 · 交通信息化'}], pm: [{n:'科大讯飞',d:'合肥 · AI产品线'}], ops: [{n:'皖通科技',d:'合肥 · 交通系统运维'},{n:'四创电子',d:'合肥 · 电子系统交付与运维'}] },
+    '福建': { dev: [{n:'新大陆',d:'福州 · 数字支付与科技'},{n:'锐捷网络',d:'福州 · 网络设备'}], pm: [{n:'国脉科技',d:'福州 · 电信服务产品'}], ops: [{n:'国脉科技',d:'福州 · 电信网络服务'},{n:'顶点软件',d:'福州 · 金融IT运维'}] },
+    '江西': { dev: [{n:'泰豪科技',d:'南昌 · 智能电力'},{n:'联创电子',d:'南昌 · 光电与显示'}], ops: [{n:'泰豪科技',d:'南昌 · 电力系统运维'}] },
+    '山东': { dev: [{n:'浪潮集团',d:'济南 · 服务器与政企软件'},{n:'中创软件',d:'济南 · 行业软件'},{n:'积成电子',d:'济南 · 电力自动化'}], pm: [{n:'浪潮集团',d:'济南 · 政企软件产品'}], ops: [{n:'积成电子',d:'济南 · 电力系统运维'}] },
+    '河南': { dev: [{n:'汉威科技',d:'郑州 · 物联网传感器'},{n:'信大捷安',d:'郑州 · 信息安全'},{n:'思维列控',d:'郑州 · 铁路信号'}], ops: [{n:'汉威科技',d:'郑州 · 物联网系统运维'}] },
+    '湖北': { dev: [{n:'烽火通信',d:'武汉 · 通信设备'},{n:'软通动力武汉',d:'武汉 · 交付中心'},{n:'光迅科技',d:'武汉 · 光通信'}], pm: [{n:'烽火通信',d:'武汉 · 政企通信产品'}], ops: [{n:'长飞光纤',d:'武汉 · 智能制造运维'},{n:'烽火通信',d:'武汉 · 网络系统运维'}] },
+    '湖南': { dev: [{n:'科创信息',d:'长沙 · 政务软件'},{n:'威胜信息',d:'长沙 · 智慧能源'}], ops: [{n:'威胜信息',d:'长沙 · 能源物联网运维'}] },
+    '广东': { dev: [{n:'华为',d:'深圳 · 政企与终端'},{n:'中兴通讯',d:'深圳 · 通信设备'},{n:'天源迪科',d:'深圳 · 电信IT'},{n:'金证股份',d:'深圳 · 金融IT'}], pm: [{n:'长亮科技',d:'深圳 · 金融科技产品'},{n:'金证股份',d:'深圳 · 金融IT产品'}], ops: [{n:'宜通世纪',d:'广州 · 网络优化维护'},{n:'海格通信',d:'广州 · 通信运维'},{n:'高新兴',d:'广州 · 物联网运维'}] },
+    '广西': { dev: [{n:'润建股份',d:'南宁 · 通信网络服务'}], ops: [{n:'润建股份',d:'南宁 · 通信网络运维'}] },
+    '海南': { dev: [{n:'海南生态软件园企业群',d:'澄迈 · 信息产业聚集区'}], ops: [{n:'海南生态软件园数据中心企业',d:'澄迈 · IDC与云服务'}] },
+    '重庆': { dev: [{n:'中移物联网',d:'重庆 · 中国移动物联网公司'}], ops: [{n:'中移物联网',d:'重庆 · 物联网平台运维'}] },
+    '四川': { dev: [{n:'创意信息',d:'成都 · 电信IT'},{n:'久远银海',d:'成都 · 医保政务软件'},{n:'迈普通信',d:'成都 · 网络设备'}], pm: [{n:'久远银海',d:'成都 · 政务与医保产品'}], ops: [{n:'创意信息',d:'成都 · 电信系统运维'}] },
+    '贵州': { dev: [{n:'朗玛信息',d:'贵阳 · 大数据与互联网医疗'}], ops: [{n:'朗玛信息',d:'贵阳 · 数据中心运维'}] },
+    '云南': { dev: [{n:'南天信息',d:'昆明 · 金融IT与行业软件'}], ops: [{n:'南天信息',d:'昆明 · 金融系统运维'}] },
+    '陕西': { dev: [{n:'大唐电信',d:'西安 · 通信设备'},{n:'诺瓦星云',d:'西安 · 显示控制'},{n:'易点天下',d:'西安 · 出海营销科技'},{n:'华为西安研究所',d:'西安 · 研发与政企'}], pm: [{n:'易点天下',d:'西安 · SaaS与营销产品'}], ops: [{n:'大唐电信',d:'西安 · 通信设备运维'}] },
+    '甘肃': { dev: [{n:'中电万维',d:'兰州 · 中国电信旗下IT公司'}], ops: [{n:'中电万维',d:'兰州 · 电信系统运维'}] },
+    '宁夏': { ops: [{n:'美利云',d:'中卫 · 数据中心运营'}] }
+  };
+
+  var sel = document.getElementById('provSelect');
+  var box = document.getElementById('provResult');
+  if (!sel || !box) return;
+
+  PROVINCES.forEach(function (p) {
+    var opt = document.createElement('option');
+    opt.value = p;
+    opt.textContent = p;
+    sel.appendChild(opt);
+  });
+  sel.value = '安徽';
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function firms(list, localTag) {
+    var html = '';
+    list.forEach(function (f) {
+      html += '<div class="prov-firm' + (localTag ? ' local' : '') + '">' +
+        '<div class="f-name">' + esc(f.n) + '</div>' +
+        (f.d ? '<div class="f-note">' + esc(f.d) + '</div>' : '') +
+        '</div>';
+    });
+    return html;
+  }
+  function render() {
+    var p = sel.value;
+    if (!p) { box.innerHTML = '<div class="prov-placeholder">选择上方省份，查看当地推荐去向</div>'; return; }
+    var local = LOCAL[p] || {};
+    var opsChips = [
+      p + '移动（含中移在线当地分公司）',
+      p + '联通',
+      p + '电信',
+      '中移铁通' + p + '分公司',
+      '中国铁塔' + p + '分公司'
+    ];
+    var html =
+      '<div class="prov-block">' +
+        '<h4><span class="dot g"></span>' + esc(p) + ' 运营商体系（最稳的本省入口）</h4>' +
+        '<div class="prov-chips">' + opsChips.map(function (c) { return '<span class="prov-chip">' + esc(c) + '</span>'; }).join('') + '</div>' +
+      '</div>' +
+      '<div class="prov-grid">' +
+        '<div class="prov-col"><div class="pc-title">开发 · 推荐</div><div class="prov-firms">' +
+          (local.dev && local.dev.length ? '<div class="prov-firm local"><div class="f-name">本省特色</div></div>' + firms(local.dev, true) : '') +
+          firms(COMMON.dev) + '</div></div>' +
+        '<div class="prov-col"><div class="pc-title">产品 · 推荐</div><div class="prov-firms">' +
+          (local.pm && local.pm.length ? '<div class="prov-firm local"><div class="f-name">本省特色</div></div>' + firms(local.pm, true) : '') +
+          firms(COMMON.pm) + '</div></div>' +
+        '<div class="prov-col"><div class="pc-title">运维 · 推荐</div><div class="prov-firms">' +
+          (local.ops && local.ops.length ? '<div class="prov-firm local"><div class="f-name">本省特色</div></div>' + firms(local.ops, true) : '') +
+          firms(COMMON.ops) + '</div></div>' +
+      '</div>';
+    box.innerHTML = html;
+  }
+  sel.addEventListener('change', render);
+  render();
+  window.__provData = { PROVINCES: PROVINCES, LOCAL: LOCAL, COMMON: COMMON };
+})();
+
+/* ===== 选择向导与结论 ===== */
+(function () {
+  'use strict';
+  var roleSel = document.getElementById('qoRole');
+  var ageSel = document.getElementById('qoAge');
+  var provSel = document.getElementById('qProv');
+  var genBtn = document.getElementById('qGen');
+  var resultSec = document.getElementById('result');
+  var loadingMask = document.getElementById('loadingMask');
+  if (!roleSel || !ageSel || !provSel || !genBtn || !resultSec || !loadingMask) return;
+
+  var PD = window.__provData || { PROVINCES: [], LOCAL: {}, COMMON: {} };
+
+  /* 测试岗全国通用（省份板块未单列，这里补充） */
+  var TEST_COMMON = [
+    { n: '中软国际', d: '测试与 QA 外包交付' },
+    { n: '软通动力', d: '运营商与政企测试交付' },
+    { n: '博彦科技', d: '软件测试外包' },
+    { n: '文思海辉', d: '金融与行业测试' },
+    { n: '华为生态伙伴', d: '测试与质量保障项目' },
+    { n: '金证股份', d: '金融 IT 测试' }
+  ];
+  var ROLE_KEY = { '开发': 'dev', '产品': 'pm', '运维': 'ops', '测试': 'test' };
+
+  var AGE_DATA = {
+    '25-30': { t: '爬坡期', s: '优先选成长性', d: '学习快、试错成本低：跳到技术含量更高的项目或公司，别为稳定留在原地；开发补云与架构，运维转 SRE / DevOps，产品与测试攒可展示作品；考证书、写总结、维护作品集，可以接受短期薪资波动，换的是后面十年的定价权。' },
+    '30-35': { t: '黄金转型期', s: '主动转型', d: '技能 + 业务 + 客户资源的组合价值最高：开发转售前 / 解决方案架构师 / 技术管理，产品转解决方案专家 / 带产品线，运维转交付管理 / 甲方运维，测试转测试管理 / 质量管理；这是收入提升的主要窗口，同步开始维护甲方人脉。' },
+    '35-40': { t: '定位期', s: '求稳 + 复合价值', d: '优先甲方化（去政企 / 运营商正式体系做信息化管理）或专家化（带团队、做行业专家或顾问，卖判断不卖体力）；避免和年轻人拼纯编码或纯手工测试；还在外包体系里，就尽快找到一个"甲方或专家"的出口。' }
+  };
+
+  var RES_ACTION = {
+    '开发': { '25-30': '跳高含金量项目；补云与架构；攒作品，可接受短期薪资波动', '30-35': '转售前 / 架构 / 管理；业务 + 技术组合定价', '35-40': '甲方信息化 / 技术管理；或行业专家路线，避免拼纯编码' },
+    '产品': { '25-30': '沉淀可展示的 PRD 与数据能力；跳行业 SaaS 或云厂商', '30-35': '转解决方案专家 / 带产品线；把项目经验抽象成方案与标准', '35-40': '行业专家 / 咨询 / 管理；卖行业判断与客户资源' },
+    '运维': { '25-30': '升 DevOps / SRE；补自动化、容器、监控；考云认证', '30-35': '转交付管理 / 甲方运维；从值班到管理', '35-40': '甲方信息化 / 团队管理；用稳定与带人能力立身' },
+    '测试': { '25-30': '学自动化测试 / 测试开发；补接口、性能与脚本能力', '30-35': '转测试管理 / 质量经理；从执行到管理', '35-40': '质量管理 / 流程专家；或转甲方信息化' }
+  };
+
+  /* 省份下拉 */
+  (PD.PROVINCES || []).forEach(function (p) {
+    var opt = document.createElement('option');
+    opt.value = p; opt.textContent = p;
+    provSel.appendChild(opt);
+  });
+  provSel.value = '安徽';
+
+  var state = { role: '', age: '', prov: '安徽' };
+  var views = [document.getElementById('qv0'), document.getElementById('qv1'), document.getElementById('qv2')];
+  var qsAll = document.querySelectorAll('.quiz-stepbar .qs');
+
+  function goStep(n) {
+    views.forEach(function (v, i) { if (v) v.classList.toggle('active', i === n); });
+    qsAll.forEach(function (q) {
+      var s = parseInt(q.getAttribute('data-step'), 10);
+      q.classList.toggle('cur', s === n);
+      q.classList.toggle('done', s < n);
+    });
+  }
+  function pick(container, val) {
+    var btns = container.querySelectorAll('.qopt');
+    btns.forEach(function (b) { b.classList.toggle('sel', b.getAttribute('data-val') === val); });
+  }
+
+  roleSel.addEventListener('click', function (e) {
+    var btn = e.target.closest('.qopt');
+    if (!btn) return;
+    state.role = btn.getAttribute('data-val');
+    pick(roleSel, state.role);
+    setTimeout(function () { goStep(1); }, 150);
+  });
+  ageSel.addEventListener('click', function (e) {
+    var btn = e.target.closest('.qopt');
+    if (!btn) return;
+    state.age = btn.getAttribute('data-val');
+    pick(ageSel, state.age);
+    setTimeout(function () { goStep(2); }, 150);
+  });
+  provSel.addEventListener('change', function () { state.prov = provSel.value; });
+  qsAll.forEach(function (q) {
+    q.addEventListener('click', function () { goStep(parseInt(q.getAttribute('data-step'), 10)); });
+  });
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function opsChipsHtml(prov) {
+    var names = [prov + '移动（含中移在线当地分公司）', prov + '联通', prov + '电信', '中移铁通' + prov + '分公司', '中国铁塔' + prov + '分公司'];
+    return names.map(function (c) { return '<span class="res-chip">' + esc(c) + '</span>'; }).join('');
+  }
+  function firmsHtml(list, localTag) {
+    var h = '';
+    (list || []).forEach(function (f) {
+      h += '<div class="res-firm' + (localTag ? ' local' : '') + '"><div class="f-name">' + esc(f.n) + '</div>' +
+        (f.d ? '<div class="f-note">' + esc(f.d) + '</div>' : '') + '</div>';
+    });
+    return h;
+  }
+
+  function renderResult() {
+    var key = ROLE_KEY[state.role];
+    var local = (PD.LOCAL[state.prov] || {})[key] || [];
+    var common = key === 'test' ? TEST_COMMON : (PD.COMMON[key] || []);
+    var age = AGE_DATA[state.age] || {};
+
+    var tags = '<span class="res-tag">' + esc(state.role) + '</span>' +
+      '<span class="res-tag hl">' + esc(state.age) + ' 岁 · ' + esc(age.t || '') + '</span>' +
+      '<span class="res-tag">' + esc(state.prov) + '</span>';
+
+    var body =
+      '<div class="res-block">' +
+        '<h4><span class="dot"></span>' + esc(state.age) + ' 岁 · 给你的核心策略（' + esc(age.s || '') + '）</h4>' +
+        '<div class="res-strategy">' + esc(age.d || '') + '</div>' +
+      '</div>' +
+      '<div class="res-block">' +
+        '<h4><span class="dot g"></span>' + esc(state.prov) + ' × ' + esc(state.role) + ' · 首选去向</h4>' +
+        '<div class="res-grid">' +
+          (local.length ? firmsHtml(local, true) : '<div class="res-firm"><div class="f-name">本省以全国性交付团队为主</div><div class="f-note">' + esc(state.role) + '岗本省未单列本地企业，以下通用推荐同样适用</div></div>') +
+          firmsHtml(common) +
+        '</div>' +
+      '</div>' +
+      '<div class="res-block">' +
+        '<h4><span class="dot"></span>' + esc(state.prov) + ' 运营商体系（最稳的本省入口）</h4>' +
+        '<div class="res-chips">' + opsChipsHtml(state.prov) + '</div>' +
+      '</div>' +
+      '<div class="res-block">' +
+        '<h4><span class="dot g"></span>下一步最该做的动作</h4>' +
+        '<div class="res-action"><b>' + esc(state.role) + ' · ' + esc(state.age) + '岁</b>：' + esc((RES_ACTION[state.role] || {})[state.age] || '') + '</div>' +
+      '</div>';
+
+    document.getElementById('resTags').innerHTML = tags;
+    document.getElementById('resBody').innerHTML = body;
+    resultSec.hidden = false;
+  }
+
+  genBtn.addEventListener('click', function () {
+    if (!state.role || !state.age) {
+      genBtn.textContent = state.role && !state.age ? '先选年龄区间' : '先选岗位';
+      setTimeout(function () { genBtn.textContent = '生成我的去向'; }, 1200);
+      return;
+    }
+    genBtn.textContent = '生成我的去向';
+    loadingMask.classList.add('show');
+    setTimeout(function () {
+      loadingMask.classList.remove('show');
+      renderResult();
+      try { resultSec.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) { resultSec.scrollIntoView(); }
+    }, 1100);
+  });
 })();
 </script>
 </body>
