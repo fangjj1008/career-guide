@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>运营商伙伴从业者去向指南 · 开发/产品/运维 × 25-40岁</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%2316333B'/%3E%3Cpath d='M12 4 13.6 10.4 20 12 13.6 13.6 12 20 10.4 13.6 4 12 10.4 10.4Z' fill='%23E8A54B'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#F7F5F0;
+    --ink:#222B2F;
+    --ink-2:#5B666B;
+    --deep:#16333B;
+    --deep-2:#1E444E;
+    --amber:#C97B2D;
+    --amber-soft:#E8A54B;
+    --green:#2E7D6B;
+    --red:#B4552D;
+    --card:#FFFFFF;
+    --line:#E5DFD4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* ===== 顶部导航 ===== */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(22,51,59,.94);backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  nav .wrap{display:flex;align-items:center;gap:16px;height:52px;}
+  .brand{display:flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:15px;white-space:nowrap;}
+  .brand svg{flex:0 0 auto;}
+  .nav-links{display:flex;gap:4px;margin-left:auto;flex-wrap:nowrap;overflow-x:auto;}
+  .nav-links a{
+    color:rgba(255,255,255,.82);text-decoration:none;font-size:13px;
+    padding:6px 10px;border-radius:6px;white-space:nowrap;
+  }
+  .nav-links a:hover{background:rgba(255,255,255,.12);color:#fff;}
+  @media (max-width:640px){ .brand span.txt{display:none;} }
+
+  /* ===== Hero ===== */
+  header{
+    background:var(--deep);color:#fff;overflow:hidden;position:relative;
+  }
+  header .wrap{position:relative;padding-top:64px;padding-bottom:72px;}
+  .hero-bg{position:absolute;inset:0;opacity:.5;pointer-events:none;}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;color:var(--amber-soft);
+    border:1px solid rgba(232,165,75,.4);border-radius:999px;
+    padding:4px 12px;margin-bottom:20px;
+  }
+  .hero-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber-soft);}
+  h1{
+    font-size:34px;line-height:1.35;font-weight:800;letter-spacing:.5px;max-width:16em;
+  }
+  h1 .hl{color:var(--amber-soft);}
+  .hero-sub{margin-top:18px;font-size:15px;color:rgba(255,255,255,.78);max-width:38em;}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .hero-meta span{
+    font-size:13px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.16);border-radius:8px;padding:7px 13px;
+  }
+  .hero-meta b{color:var(--amber-soft);font-weight:700;}
+
+  @media (max-width:640px){
+    h1{font-size:26px;}
+    header .wrap{padding-top:44px;padding-bottom:52px;}
+  }
+
+  /* ===== 区块通用 ===== */
+  section{padding:60px 0 8px;}
+  .sec-head{margin-bottom:28px;}
+  .sec-kicker{
+    display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:2px;
+    color:var(--amber);text-transform:none;margin-bottom:10px;
+  }
+  h2{font-size:26px;font-weight:800;color:var(--deep);line-height:1.35;}
+  .sec-desc{margin-top:10px;font-size:14.5px;color:var(--ink-2);max-width:52em;}
+  @media (max-width:640px){ section{padding:44px 0 4px;} h2{font-size:22px;} }
+
+  /* ===== 岗位卡片 ===== */
+  .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;}
+  @media (max-width:900px){ .role-grid{grid-template-columns:1fr;} }
+  .role-card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:22px 20px;display:flex;flex-direction:column;
+  }
+  .role-card .r-head{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+  .r-ico{
+    width:40px;height:40px;border-radius:10px;flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;color:#fff;
+  }
+  .r-ico.dev{background:var(--deep);}
+  .r-ico.pm{background:var(--amber);}
+  .r-ico.ops{background:var(--green);}
+  .role-card h3{font-size:19px;font-weight:800;color:var(--deep);}
+  .r-note{font-size:13px;color:var(--ink-2);margin:8px 0 14px;border-left:3px solid var(--line);padding-left:10px;}
+  .path-list{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .path-list li{
+    border:1px solid var(--line);border-radius:10px;padding:11px 12px;
+    background:#FCFBF8;
+  }
+  .path-list li.hot{border-color:rgba(46,125,107,.55);background:rgba(46,125,107,.05);}
+  .p-name{font-size:14.5px;font-weight:700;color:var(--ink);}
+  .p-name .succ{
+    display:inline-block;margin-left:8px;font-size:12px;font-weight:700;color:#fff;
+    background:var(--green);border-radius:999px;padding:1px 9px;vertical-align:1px;
+  }
+  .p-desc{font-size:13px;color:var(--ink-2);margin-top:3px;}
+  .p-tag{
+    display:inline-block;margin-top:7px;font-size:12px;color:var(--deep);
+    background:rgba(22,51,59,.07);border-radius:6px;padding:2px 8px;
+  }
+  .p-tag.t2{color:var(--amber);background:rgba(201,123,45,.1);}
+  .p-tag.t3{color:var(--ink-2);background:rgba(91,102,107,.1);}
+
+  /* ===== 年龄段时间轴 ===== */
+  .timeline{
+    display:grid;grid-template-columns:120px 24px 1fr;gap:0 14px;
+  }
+  .tl-row{display:contents;}
+  .tl-time{
+    text-align:right;padding:4px 0 0 0;
+  }
+  .tl-time .y{font-size:16px;font-weight:800;color:var(--deep);white-space:nowrap;}
+  .tl-time .k{font-size:12.5px;color:var(--amber);font-weight:700;}
+  .tl-axis{position:relative;display:flex;justify-content:center;}
+  .tl-axis::before{content:"";position:absolute;top:10px;bottom:10px;width:2px;background:var(--line);}
+  .tl-dot{
+    width:16px;height:16px;border-radius:50%;background:#fff;border:4px solid var(--amber);
+    margin-top:8px;justify-self:center;z-index:1;
+  }
+  .tl-card{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;margin-bottom:18px;
+  }
+  .tl-card h4{font-size:16px;font-weight:800;color:var(--deep);margin-bottom:8px;}
+  .tl-card ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .tl-card li{font-size:14px;color:var(--ink);padding-left:18px;position:relative;}
+  .tl-card li::before{content:"";position:absolute;left:2px;top:11px;width:8px;height:2px;background:var(--amber);}
+  .tl-card li b{color:var(--deep);}
+  @media (max-width:640px){
+    .timeline{grid-template-columns:74px 18px 1fr;gap:0 8px;}
+    .tl-time .y{font-size:14.5px;}
+    .tl-time .k{font-size:11.5px;}
+    .tl-card{padding:13px 14px;}
+    .tl-card li{font-size:13.5px;}
+  }
+
+  /* ===== 速查矩阵 ===== */
+  .table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--card);}
+  table{width:100%;border-collapse:collapse;table-layout:fixed;min-width:640px;}
+  colgroup col.c1{width:14%;}
+  colgroup col.c2{width:29%;}
+  colgroup col.c3{width:29%;}
+  colgroup col.c4{width:28%;}
+  th,td{padding:13px 14px;font-size:13.5px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+  thead th{background:var(--deep);color:#fff;font-weight:700;font-size:14px;}
+  tbody th{
+    background:#F0EDE6;color:var(--deep);font-weight:800;text-align:center;
+    font-size:14px;width:14%;
+  }
+  tbody tr:last-child td{border-bottom:none;}
+  td .cell-t{font-weight:700;color:var(--ink);font-size:13.5px;}
+  td .cell-d{color:var(--ink-2);font-size:12.5px;margin-top:2px;}
+
+  /* ===== 通用建议 ===== */
+  .advice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media (max-width:900px){ .advice-grid{grid-template-columns:1fr;} }
+  .advice{
+    background:var(--deep);color:#fff;border-radius:14px;padding:22px 20px;
+    position:relative;overflow:hidden;
+  }
+  .advice .n{font-size:34px;font-weight:800;color:var(--amber-soft);line-height:1;}
+  .advice h4{font-size:16.5px;font-weight:800;margin:10px 0 8px;color:#fff;}
+  .advice p{font-size:13.5px;color:rgba(255,255,255,.78);}
+
+  footer{border-top:1px solid var(--line);margin-top:64px;padding:26px 0 40px;}
+  footer .wrap{font-size:12.5px;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;}
+  .backtop{margin-left:auto;color:var(--amber);text-decoration:none;font-size:13px;font-weight:700;}
+  .backtop:hover{text-decoration:underline;}
+
+  /* ===== 动效（克制版） ===== */
+  html.js [data-aos]{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+  html.js [data-aos].aos-in{opacity:1;transform:none;}
+
+  .role-card,.tl-card,.advice,.table-scroll{
+    transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+  }
+  .role-card:hover,.tl-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(22,51,59,.10);border-color:#C9BFB0;}
+  .advice:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(22,51,59,.22);}
+  .role-card:active,.tl-card:active,.advice:active,.table-scroll:active{transform:translateY(-1px) scale(.992);}
+
+  .path-list li{
+    transition:transform .2s ease,border-color .2s ease,background-color .2s ease;
+  }
+  .path-list li:hover{transform:translateX(3px);border-color:rgba(22,51,59,.38);background-color:#fff;}
+  .path-list li.hot:hover{border-color:rgba(46,125,107,.7);}
+
+  .r-ico{transition:transform .3s ease;}
+  .role-card:hover .r-ico{transform:translateY(-3px) scale(1.06);}
+
+  .nav-links a:active{background:rgba(255,255,255,.2);}
+  .backtop:active{color:var(--deep);}
+
+  @media (prefers-reduced-motion: reduce){
+    html.js [data-aos]{opacity:1;transform:none;transition:none;}
+    .role-card,.tl-card,.advice,.table-scroll,.path-list li,.r-ico{
+      transition:none !important;transform:none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">
+      <svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#E8A54B" stroke-width="1.6"/><path d="M12 4 13.6 10.4 20 12 13.6 13.6 12 20 10.4 13.6 4 12 10.4 10.4Z" fill="#E8A54B"/></svg>
+      <span class="txt">去向指南</span>
+    </div>
+    <div class="nav-links">
+      <a href="#roles">岗位去向</a>
+      <a href="#ages">年龄段</a>
+      <a href="#matrix">速查矩阵</a>
+      <a href="#advice">通用建议</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <svg class="hero-bg" viewBox="0 0 800 320" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#E8A54B" stroke-width="1" opacity=".35">
+      <path d="M0 60 H800"/>
+      <path d="M0 120 H800"/>
+      <path d="M0 180 H800"/>
+      <path d="M0 240 H800"/>
+    </g>
+    <g stroke="rgba(255,255,255,.22)" stroke-width="1" fill="none">
+      <path d="M100 300 C 180 180, 260 240, 340 160 S 540 60, 640 120"/>
+      <path d="M60 40 C 200 100, 300 40, 420 100 S 640 180, 760 120"/>
+    </g>
+    <g fill="#E8A54B" opacity=".8">
+      <circle cx="340" cy="160" r="4"/><circle cx="420" cy="100" r="4"/><circle cx="640" cy="120" r="4"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="hero-tag">职业路径规划 · 经验性建议</div>
+    <h1>运营商合作伙伴公司的从业者，<br><span class="hl">失业后往哪走？</span></h1>
+    <p class="hero-sub">不是只聊开发。这份指南覆盖同一家公司里的开发、产品、运维三类岗位，并按 25–30、30–35、35–40 三个年龄段给出各自的路径与优先级——先想清楚"你现在站在哪、下一站能去哪"。</p>
+    <div class="hero-meta">
+      <span>岗位 <b>3</b> 类：开发 / 产品 / 运维</span>
+      <span>年龄段 <b>3</b> 段：25–40 岁</span>
+      <span>匹配度与成功率仅为经验判断，非精确数据</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 视图：岗位去向 ===== -->
+<section id="roles">
+  <div class="wrap">
+    <div class="sec-head" data-aos>
+      <div class="sec-kicker">PART 01 · 按岗位</div>
+      <h2>同公司三类岗位，各走各的路</h2>
+      <p class="sec-desc">在运营商伙伴公司（外包 / 集成分包）里，开发、产品、运维的处境和可平移的技能不同，去向自然分开。核心逻辑始终是：把你手里的「运营商业务理解 + 项目经验」换到一个还愿意为它付钱的地方。</p>
+    </div>
+    <div class="role-grid">
+
+      <!-- 开发 -->
+      <article class="role-card" data-aos>
+        <div class="r-head">
+          <div class="r-ico dev">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13 4l-2 16"/></svg>
+          </div>
+          <h3>开发</h3>
+        </div>
+        <p class="r-note">技术栈围绕运营商系统（Java / 前端 / 数据库 / 接口对接），价值在于业务系统经验，而不只是语言本身。</p>
+        <ul class="path-list">
+          <li>
+            <div class="p-name">同赛道平移 · 其他运营商服务商 / 集成商</div>
+            <div class="p-desc">中软国际、软通动力、亚信、宇信、华为生态伙伴、联通数科 / 中移集成 / 电信集成等</div>
+            <span class="p-tag">技能直接复用 · 最快</span>
+          </li>
+          <li>
+            <div class="p-name">泛政企数字化 · 政务 / 智慧城市 / 能源 / 金融集成商</div>
+            <div class="p-desc">招投标、驻场、验收模式相同；运营商背景懂合规、等保、接口规范</div>
+            <span class="p-tag t2">经验加分 · 面广</span>
+          </li>
+          <li>
+            <div class="p-name">云厂商 / 设备商生态 · 政企交付与解决方案岗</div>
+            <div class="p-desc">华为、中兴、阿里云、腾讯云的政企交付 / 实施团队</div>
+            <span class="p-tag t2">收入上限更高</span>
+          </li>
+          <li>
+            <div class="p-name">转岗 · 售前 / 解决方案架构师 / 项目经理</div>
+            <div class="p-desc">运营商业务知识在售前、交付岗很值钱；补方案编写与客户沟通</div>
+            <span class="p-tag t2">转型窗口</span>
+          </li>
+          <li>
+            <div class="p-name">跨界 · 互联网 / ToB 产品公司技术岗</div>
+            <div class="p-desc">技术通用可投中后台；外包经历会打折，需项目亮点或作品背书</div>
+            <span class="p-tag t3">需背书</span>
+          </li>
+          <li>
+            <div class="p-name">稳定路线 · 国企 / 运营商正式编制、考公考编</div>
+            <div class="p-desc">长期稳定，但靠考试与名额，周期长</div>
+            <span class="p-tag t3">周期长</span>
+          </li>
+          <li class="hot">
+            <div class="p-name">开店创业 · 服装店 / 拼豆店<span class="succ">成功率：高</span></div>
+            <div class="p-desc">把多年攒下的积蓄、执行力和抗压能力转到线下实体：服装店看选品与选址，拼豆店吃手工体验与亲子客流；启动门槛低、回本周期可控，适合不想再卷外包的开发</div>
+            <span class="p-tag t2">方向明确 · 灵活</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- 产品 -->
+      <article class="role-card" data-aos>
+        <div class="r-head">
+          <div class="r-ico pm">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 12h18M5 5l14 14M19 5 5 19"/></svg>
+          </div>
+          <h3>产品</h3>
+        </div>
+        <p class="r-note">多为业务型 / B 端产品经理：懂运营商业务（BSS/OSS、CRM、计费、营业厅、政企线），离用户远、跟着项目定制走，简历上的"项目名"多过"产品名"。</p>
+        <ul class="path-list">
+          <li>
+            <div class="p-name">同赛道平移 · 通信 / 软件厂商产品经理</div>
+            <div class="p-desc">亚信、华为、中兴、宇信、长亮等，B 端业务经验直接匹配</div>
+            <span class="p-tag">业务直接复用</span>
+          </li>
+          <li>
+            <div class="p-name">泛政企数字化 · 政务 / 园区 / 能源数字化产品经理</div>
+            <div class="p-desc">产品思维 + 政企业务理解复用；同样吃招投标和交付节奏</div>
+            <span class="p-tag t2">经验加分</span>
+          </li>
+          <li>
+            <div class="p-name">云厂商 · 行业解决方案产品经理</div>
+            <div class="p-desc">阿里云 / 腾讯云 / 华为云行业线，把项目经验抽象成标准化方案</div>
+            <span class="p-tag t2">收入上限更高</span>
+          </li>
+          <li>
+            <div class="p-name">跨界 · 互联网 ToB / 中后台产品</div>
+            <div class="p-desc">竞争激烈，需要拿得出手的 PRD 作品、数据能力和用户视角</div>
+            <span class="p-tag t3">需作品背书</span>
+          </li>
+          <li>
+            <div class="p-name">转售前 / 解决方案专家</div>
+            <div class="p-desc">懂客户、懂业务、懂方案——运营商产品经验在售前岗极值钱</div>
+            <span class="p-tag t2">转型窗口</span>
+          </li>
+          <li>
+            <div class="p-name">独立顾问 / 自由职业</div>
+            <div class="p-desc">接政企数字化咨询、方案外包，靠人脉和口碑，起步慢但上限自由</div>
+            <span class="p-tag t3">靠人脉</span>
+          </li>
+        </ul>
+      </article>
+
+      <!-- 运维 -->
+      <article class="role-card" data-aos>
+        <div class="r-head">
+          <div class="r-ico ops">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg>
+          </div>
+          <h3>运维</h3>
+        </div>
+        <p class="r-note">部署、监控、故障处理、割接、值班，常驻客户现场。价值在"稳"，风险在"可替代"，出路是把运维升级成可迁移的工程能力。</p>
+        <ul class="path-list">
+          <li>
+            <div class="p-name">同赛道平移 · 集成商 / 服务商运维、实施、交付</div>
+            <div class="p-desc">政务、金融、能源项目同样缺稳定交付的人，经验直接平移</div>
+            <span class="p-tag">最快</span>
+          </li>
+          <li>
+            <div class="p-name">行业运维 · 政企 / 金融 / 能源 SRE、驻场</div>
+            <div class="p-desc">行业数字化持续要人，且比运营商外包体系更正规</div>
+            <span class="p-tag t2">需求稳定</span>
+          </li>
+          <li>
+            <div class="p-name">云厂商 · 云运维 / 技术支持</div>
+            <div class="p-desc">华为云 HCIP / 阿里云 ACP / AWS 认证加分，收入与体系更好</div>
+            <span class="p-tag t2">认证撬动</span>
+          </li>
+          <li>
+            <div class="p-name">升级 DevOps / SRE</div>
+            <div class="p-desc">补脚本化、容器、监控与告警体系，摆脱"值班型运维"</div>
+            <span class="p-tag t2">技能升级</span>
+          </li>
+          <li>
+            <div class="p-name">转交付 / 实施经理</div>
+            <div class="p-desc">懂现场、懂客户、懂排期，往管理侧走一步</div>
+            <span class="p-tag t2">转型窗口</span>
+          </li>
+          <li>
+            <div class="p-name">甲方信息化部门</div>
+            <div class="p-desc">政企单位信息化岗，从乙方变甲方，稳定且地位反转</div>
+            <span class="p-tag t3">稳定</span>
+          </li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 视图：年龄段时间轴 ===== -->
+<section id="ages">
+  <div class="wrap">
+    <div class="sec-head" data-aos>
+      <div class="sec-kicker">PART 02 · 按年龄</div>
+      <h2>25–40 岁，三个年龄段三套打法</h2>
+      <p class="sec-desc">同样一份运营商伙伴公司的工作，25 岁、32 岁、38 岁的正确答案完全不同。差别不在技术，在于你手里筹码（技能、经验、资源、家庭负担）的构成变了。</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-time"><div class="y">25–30 岁</div><div class="k">爬坡期</div></div>
+        <div class="tl-axis"><div class="tl-dot"></div></div>
+        <div class="tl-card" data-aos>
+          <h4>筹码：学习快、试错成本低。策略：优先选成长性。</h4>
+          <ul>
+            <li>跳到<b>技术含量更高的项目或公司</b>，别为稳定留在原地</li>
+            <li>开发补云与架构，运维转 SRE / DevOps，产品攒可展示作品</li>
+            <li>考证书、写总结、维护作品集——为 30 岁后的转型攒弹药</li>
+            <li>可以接受短期薪资波动，换的是后面十年的定价权</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time"><div class="y">30–35 岁</div><div class="k">黄金转型期</div></div>
+        <div class="tl-axis"><div class="tl-dot"></div></div>
+        <div class="tl-card" data-aos>
+          <h4>筹码：技能 + 业务 + 客户资源的组合价值最高。策略：主动转型。</h4>
+          <ul>
+            <li>开发转<b>售前 / 解决方案架构师 / 技术管理</b></li>
+            <li>产品转<b>解决方案专家 / 带产品线</b>；运维转<b>交付管理 / 甲方运维</b></li>
+            <li>这是收入提升的主要窗口，错过成本最高</li>
+            <li>同步开始维护甲方人脉，为 35 岁后铺路</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-time"><div class="y">35–40 岁</div><div class="k">定位期</div></div>
+        <div class="tl-axis"><div class="tl-dot"></div></div>
+        <div class="tl-card" data-aos>
+          <h4>筹码：行业判断、带团队、甲方关系。策略：求稳 + 复合价值。</h4>
+          <ul>
+            <li>优先<b>甲方化</b>：去政企 / 运营商正式体系做信息化管理</li>
+            <li>或者<b>专家化</b>：带交付团队、做行业专家、顾问，卖判断不卖体力</li>
+            <li>避免和年轻人拼纯编码——除非你有不可替代的领域深度</li>
+            <li>还在外包体系里的话，尽快找一个"甲方或专家"的出口</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 视图：速查矩阵 ===== -->
+<section id="matrix">
+  <div class="wrap">
+    <div class="sec-head" data-aos>
+      <div class="sec-kicker">PART 03 · 速查</div>
+      <h2>岗位 × 年龄，一眼找到你的下一步</h2>
+      <p class="sec-desc">把上面两部分压缩成一张表：横着看年龄，竖着看岗位，交叉格就是你当前最值得优先做的动作。</p>
+    </div>
+    <div class="table-scroll" data-aos>
+      <table>
+        <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>
+        <thead>
+          <tr><th>岗位</th><th>25–30 岁</th><th>30–35 岁</th><th>35–40 岁</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>开发</th>
+            <td><div class="cell-t">跳高含金量项目</div><div class="cell-d">补云与架构；攒作品；可接受短期薪资波动</div></td>
+            <td><div class="cell-t">转售前 / 架构 / 管理</div><div class="cell-d">业务 + 技术组合定价，收入主窗口</div></td>
+            <td><div class="cell-t">甲方信息化 / 技术管理</div><div class="cell-d">或行业专家路线，避免拼纯编码</div></td>
+          </tr>
+          <tr>
+            <th>产品</th>
+            <td><div class="cell-t">沉淀可展示作品</div><div class="cell-d">PRD、数据能力；跳行业 SaaS 或云厂商</div></td>
+            <td><div class="cell-t">转解决方案专家 / 带产品线</div><div class="cell-d">把项目经验抽象成方案与标准</div></td>
+            <td><div class="cell-t">行业专家 / 咨询 / 管理</div><div class="cell-d">卖行业判断与客户资源</div></td>
+          </tr>
+          <tr>
+            <th>运维</th>
+            <td><div class="cell-t">升 DevOps / SRE</div><div class="cell-d">补自动化、容器、监控；考云认证</div></td>
+            <td><div class="cell-t">转交付管理 / 甲方运维</div><div class="cell-d">从值班到管理，摆脱可替代性</div></td>
+            <td><div class="cell-t">甲方信息化 / 团队管理</div><div class="cell-d">用稳定与带人能力立身</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 视图：通用建议 ===== -->
+<section id="advice">
+  <div class="wrap">
+    <div class="sec-head" data-aos>
+      <div class="sec-kicker">PART 04 · 无论岗位与年龄</div>
+      <h2>三条通用建议</h2>
+    </div>
+    <div class="advice-grid">
+      <div class="advice" data-aos>
+        <div class="n">01</div>
+        <h4>简历写能力，不写公司名</h4>
+        <p>不写"做过运营商项目"这种空话。写高并发接口、计费 / 账务逻辑、等保合规、大数据量处理、客户驻场交付——这些是别的行业看得懂、愿意付钱的东西。</p>
+      </div>
+      <div class="advice" data-aos>
+        <div class="n">02</div>
+        <h4>甲方与客户资源比技术更保值</h4>
+        <p>外包体系的隐形资产是认识的人。甲方信息化负责人、项目里的关键角色，是你 35 岁后"甲方化、专家化"的入场券，平时就要维护。</p>
+      </div>
+      <div class="advice" data-aos>
+        <div class="n">03</div>
+        <h4>每年看一次市场，别等失业才规划</h4>
+        <p>哪怕不跳槽，每年投几份简历、约几次面试，把行情和自身定价摸清楚。职业规划是日常动作，不是失业当天的紧急任务。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>本页内容为经验性建议，匹配度与成功率非精确数据，仅供参考。</span>
+    <a class="backtop" href="#roles">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  try {
+    /* 有 JS 才开启入场隐藏，无 JS 时内容直接可见 */
+    document.documentElement.classList.add('js');
+
+    /* 1. 滚动入场：进入视口淡入上滑（一次性） */
+    var aos = document.querySelectorAll('[data-aos]');
+    if (aos.length) {
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) {
+            if (en.isIntersecting) {
+              en.target.classList.add('aos-in');
+              io.unobserve(en.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -36px 0px', threshold: 0.05 });
+        aos.forEach(function (el) { io.observe(el); });
+      } else {
+        aos.forEach(function (el) { el.classList.add('aos-in'); });
+      }
+    }
+
+    /* 2. hero 背景随鼠标轻微视差（仅桌面指针设备 + 未开启减弱动效） */
+    var heroBg = document.querySelector('header .hero-bg');
+    var finePointer = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (heroBg && finePointer && !reduceMotion) {
+      var raf = null;
+      window.addEventListener('mousemove', function (e) {
+        if (raf) return;
+        raf = requestAnimationFrame(function () {
+          raf = null;
+          var x = e.clientX / window.innerWidth - 0.5;
+          var y = e.clientY / window.innerHeight - 0.5;
+          heroBg.style.transform = 'scale(1.06) translate(' + (x * -12).toFixed(1) + 'px,' + (y * -9).toFixed(1) + 'px)';
+        });
+      });
+    }
+  } catch (err) { /* 动效失败不影响内容展示 */ }
+})();
+</script>
+</body>
+</html>
